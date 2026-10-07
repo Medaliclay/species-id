@@ -4,6 +4,19 @@
 
 Take a photo, and the app tells you the species with real scientific data from GBIF, iNaturalist, Wikipedia and the IUCN Red List.
 
+## 📱 Test platform: Species Lens (GitHub Pages)
+
+**Live page:** https://medaliclay.github.io/species-id/
+
+Open it on a phone, point the camera at a plant or animal, and tap the shutter. BioCLIP 2 identifies it, and the page shows the classification, IUCN status, worldwide and Saudi records, a description and the top-5 guesses. You can also upload a photo or try one of the 8 sample photos.
+
+- The page is a single static file, `docs/index.html`. It uses the **public BioCLIP 2 demo server** from the Imageomics Institute, so no setup is needed.
+- If the public demo is busy, use **Duplicate this Space** on huggingface.co/spaces/imageomics/bioclip-2-demo, then open the page with `?space=your-name/bioclip-2-demo` at the end of the address.
+- **One-time setup:** in the repo, go to **Settings → Pages → Source** and choose **GitHub Actions**. After that, every push to `main` tests the page and republishes it.
+- The tests in `e2e/` use Playwright to check the camera, upload, results, the "unsure" fallback, errors, and that phones don't scroll sideways. A live test also runs the real BioCLIP 2.
+
+## Full app (Cloudflare)
+
 ```
  Phone camera
      │  photo
